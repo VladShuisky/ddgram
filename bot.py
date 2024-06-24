@@ -8,12 +8,13 @@ bot_logger.basicConfig(
 )
 
 from config import TOKEN
-from handlers import message_handler
+from handlers import message_handler, reply_handler
 
 
 bot = ApplicationBuilder().token(TOKEN).build()
 
 bot.add_handler(message_handler)
+bot.add_handler(reply_handler)
 
 if __name__ == '__main__':
     try:
